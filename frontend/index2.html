@@ -1729,22 +1729,7 @@
         return filteredData.slice(start, end);
       }, [filteredData, scrollTop]);
       // --- Handlers ---
-      async function notifyTimelineChange(lesson) {
-        try {
-          // Only send the new columns
-          const payload = {};
-          ["Challenge", "Description", "Platform", "Customer", "Owner", "Solution", "Status", "Timeline"].forEach(key => {
-            payload[key] = lesson[key] || '';
-          });
-          await fetch('http://localhost:3001/api/notify-timeline-change', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload),
-          });
-        } catch (err) {
-          console.error('Failed to notify timeline change:', err);
-        }
-      }
+      // Notification function removed - frontend only
       // Column resize functionality
       const handleColumnResize = (e, columnKey) => {
         e.preventDefault();
@@ -1813,12 +1798,7 @@
           "Impact Level": normalizeImpactLevel(editRow["Impact Level"])
         };
         if (editingId) {
-          const oldLesson = data.find(r => r._id === editingId);
-          const timelineChanged = oldLesson && oldLesson.Timeline !== normalizedRow.Timeline;
           setData(data => data.map(r => r._id === editingId ? { ...normalizedRow } : r));
-          if (timelineChanged) {
-            notifyTimelineChange(normalizedRow);
-          }
         } else {
           setData(data => [{ ...normalizedRow }, ...data]);
         }
