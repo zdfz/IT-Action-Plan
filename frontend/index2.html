@@ -429,19 +429,19 @@
       color: #c1121f;
     }
 
-    .status-work-in-progress {
+    .status-in-progress {
       background: #ffe066;
       color: #b26a00;
     }
 
-    .status-at-risk {
-      background: #ffeaea;
-      color: #c1121f;
-    }
-
-    .status-completed {
+    .status-resolved {
       background: #2e9e6e;
       color: #fff;
+    }
+
+    .status-under-testing {
+      background: #e7f0fa;
+      color: #2563eb;
     }
 
     .scrollbar-thin::-webkit-scrollbar {
@@ -858,153 +858,167 @@
     // --- Demo Data (mimics Excel structure) ---
     const DEMO_DATA = [
       {
-        Category: "AWB Last Mile Visibility",
-        Description: "AWB Last Mile: Orders are being created on Zid, but they are not reflected on SLK on the customer side, preventing the ability to print the AWB.",
-        Platform: "Zid",
-        Customer: "Rasees",
-        Owner: "IT",
-        Action: "Resolution: The memory issue was cleared, and the service was restarted. Order processing is now fully restored. Preventive Taken Actions: • Monitoring and alerts will be added for memory usage. • Auto memory cleansing for successful jobs that runs every week",
-        Status: "Completed",
-        Timeline: "May"
-      },
-      {
-        Category: "Dashboard Delays",
         Description: "3 Dashboards were requested since over a year, one is only done and still not live and not up to the desired standards",
         Platform: "Dashboard",
         Customer: "All",
-        Owner: "IT/Product Ibrahim",
-        Action: "",
-        Status: "Not Started",
-        Timeline: "Before end of Q3"
+        Owner: "IT/Product",
+        Solution: "@Ibrahim El-Sayed",
+        Status: "In Progress",
+        Timeline: "Before end of Q3",
+        Remarks: "This feature is not doable currently in Mintsoft, @Ibrahim El-Sayed to include it in the new middleware requirements",
+        Reference: ""
       },
       {
-        Category: "Mintsoft Limitation",
-        Description: "> SKU Agging > For all the brands they use the same template to upload the orders but for Aldo and CIS for some of the orders the TO doesn't reflects on the physical AWB label that is being pasted on the AWBs can you check and advise on this as this is causing unnecessary delay.",
-        Platform: "Mintsoft",
-        Customer: "Othaim",
-        Owner: "IT",
-        Action: "Added the reference number",
-        Status: "Completed",
-        Timeline: "June"
-      },
-      {
-        Category: "Mintsoft Limitation",
         Description: "Othaim has requested that they apply a rule in Mintsoft for all the brands that, in case the order is on back, it doesn't reflect to us and blocks them from uploading until all SKUs are available in the SOH.",
         Platform: "Mintsoft",
         Customer: "Othaim",
         Owner: "IT",
-        Action: "Hisham to follow up with Mintosoft. An update is expected by the date specified in the Timeline column.",
+        Solution: "Hisham to follow up with Mintsoft. An update is expected by the date specified in the Timeline column.",
         Status: "Not Started",
-        Timeline: "21/07/25"
+        Timeline: "21/07/25",
+        Remarks: "This feature is not doable currently in Mintsoft, @Ibrahim El-Sayed to include it in the new WMS data project",
+        Reference: ""
       },
       {
-        Category: "Mintsoft Limitation",
         Description: "Historic report data, report limitation, and billing files with incomplete important details - Specially for Storage",
         Platform: "Mintsoft",
         Customer: "Othaim",
         Owner: "IT Product/Data team",
-        Action: "Requirement to be shared with Ibraim to be included on Mitsoft data project",
+        Solution: "Requirement to be shared with @Ibrahim El-Sayed to be included on Mintsoft data project",
         Status: "Not Started",
-        Timeline: ""
+        Timeline: "",
+        Remarks: "This feature is not doable currently in Mintsoft, @Ibrahim El-Sayed to include it in the new WMS data project",
+        Reference: ""
       },
       {
-        Category: "Mintsoft Limitation",
         Description: "GPS coordinates not reflecting in DMS causing Lower FDDS. Meaning FF customers push for the GPS coordinates and we don't use them as they are not pushed on SHIPSY",
         Platform: "Mintsoft",
         Customer: "All",
         Owner: "IT",
-        Action: "Hisham will come with a solution end of next week",
-        Status: "Not Started",
-        Timeline: "24/07"
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "In Progress",
+        Timeline: "24/07/25",
+        Remarks: "Aug W2\nNew Users stories will be created for national address project and shared soon",
+        Reference: "National Address code / XY Coordinates mapping in Salla / ZID Plugins"
       },
       {
-        Category: "Platform integration and customer onboarding",
         Description: "Repeated integration issues with eCom platforms delay onboarding and reduce customer confidence.",
         Platform: "All",
         Customer: "All",
         Owner: "CS/IT",
-        Action: "The following key tasks are to be handled by the AM team: 1. PO creation 2. Inbound creation 3. New product creation 4.Product bundling 5. Generating report requests for all clients Additionally, Hisham is to explore the product integration possibilities with Salla and Zid, and provide an update by end of next week.",
-        Status: "Not Started",
-        Timeline: ""
+        Solution: "AM to do the main tasks. Such as: 1. Create PO 2. Inbound 3. New product 4. Bundle 5. Report request for all clients\nAlso, Hisham to explore integration for products with Salla and Zid by end of next week the update",
+        Status: "In Progress",
+        Timeline: "",
+        Remarks: "Under Scoping ETA to be provided by Aug W2",
+        Reference: "https://dev.azure.com/Starlinks-HeadOffice/Starlinks%20Capability%20Development/_backlogs/backlog/Com%20ProductOps/Files/WorkItems/7629"
       },
       {
-        Category: "Salla - Mintsoft",
         Description: "Stock sync delay between Salla & Mintsoft leading to receive backorders",
         Platform: "Salla",
         Customer: "Her-KSA",
         Owner: "IT",
-        Action: "Hisham to follow up with Mintosoft. An update is expected by the date specified in the Timeline column.",
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
         Status: "In Progress",
-        Timeline: "24/07/25"
+        Timeline: "24/07/25",
+        Remarks: "Aug W1\nSync time to be reduced to 5 Minutes instead of 20",
+        Reference: "http://dev.azure.com/Starlinks-HeadOffice/Starlinks%20Capability%20Development/_backlogs/backlog/Com%20ProductOps/Files/WorkItems/7629"
       },
       {
-        Category: "Shipments Fufillment and Adresses",
         Description: "Address Errors: The website gives customers flexibility when entering their address, resulting in incorrect or incomplete orders. Updating these addresses in Shipsy and SLK is time-consuming and fully manual.",
         Platform: "WMS",
         Customer: "Squatwolf",
         Owner: "IT",
-        Action: "This issue will be issed with the new regulation related to the national address",
-        Status: "Not Started",
-        Timeline: "24/07/25"
-      },
-      {
-        Category: "Technical Issue",
-        Description: "> The shipments for DHL that are picked up from DHL DMM are showing pickup awaited from RUH appreciate it if we can fix this as early as possible also the origin Hub shows as RUH. > Wrong customer name is being sent to DHL > Shipsy - new closed status > Odd Mapping -the odd mapping happened because the NDRS wasn't accurate from the 3PL, and the JNT issue is resolved. For Tamex, we are struggling with them due to a technical issue from their side, We had a call with the ops and everything cleared with her, and the pending task is only rewarding for one NDR. And the team is working on it. > COD Issue -COD RTO orders can't be identified in Shipsy & Dashboard > Attempts shwoing more than actual attempts",
-        Platform: "Shipsy",
-        Customer: "All clients , DHL, SLG",
-        Owner: "IT",
-        Action: "Hisham to follow up with Mintosoft. An update is expected by the date specified in the Timeline column.",
+        Solution: "This issue will be solved with the new regulation related to the national address",
         Status: "In Progress",
-        Timeline: "Before end of Q3"
+        Timeline: "TBD",
+        Remarks: "National Address Changes are under scoping",
+        Reference: ""
       },
       {
-        Category: "Printing AWB",
-        Description: "Enhance speed of printing Waybills",
-        Platform: "ZID",
-        Customer: "Dkhoon",
+        Description: "The shipments for DHL that are picked up from DHL DMM are showing pickup awaited from RUH appreciate it if we can fix this as early as possible also the origin Hub shows as RUH.",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
         Owner: "IT",
-        Action: "Enhanced and Doubled",
-        Status: "Completed",
-        Timeline: "June"
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Resolved",
+        Timeline: "24/07/25",
+        Remarks: "Destination Hub Column to be used for differentiating DMM / JED DHL Hubs",
+        Reference: ""
       },
       {
-        Category: "Zid Integration",
-        Description: "1. Status Mapping: Zid currently supports a limited shipment statuses (~ 3 to 4). 2. Zoning – \"Other\" Option: When the consignee selects the city, the \"Other\" option appears in the list, which leads to incorrect zoning. 3. RTO Shipments Updates on ZID: Customer relys on daily report to cancel RTO Shipments in ZID to proceed with consignee refunds 4. Bundles: Bundles are being created without applying sales percentages. The issue occurred because Dkhoon was not onboarded by the CX team, which led to missing configurations.",
-        Platform: "ZID, Zid",
-        Customer: "All - Zid, Dkhoon , Rasees",
+        Description: "Wrong customer name is being sent to DHL",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
         Owner: "IT",
-        Action: "1. Communicated with Zid aleady 2. \"others deleted from the list 3. Addedd \"Cancelled\" status so cpmpleted.",
-        Status: "Completed",
-        Timeline: "Q1"
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Resolved",
+        Timeline: "",
+        Remarks: "",
+        Reference: ""
       },
       {
-        Category: "IT Operation",
-        Description: "1. Zoning Issue 2. Lack of tracking",
-        Platform: "NA",
-        Customer: "All",
+        Description: "Shipsy - new closed status",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
         Owner: "IT",
-        Action: "",
-        Status: "Not Started",
-        Timeline: ""
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Resolved",
+        Timeline: "",
+        Remarks: "Exception with Damaged Reason is being used in Shipsy that is mapped with Damaged SLK Status",
+        Reference: ""
+      },
+      {
+        Description: "Odd Mapping -the odd mapping happened because the NDRS wasn't accurate from the 3PL, and the JNT issue is resolved. For Tamex, we are struggling with them due to a technical issue from their side,",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
+        Owner: "IT",
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Resolved",
+        Timeline: "",
+        Remarks: "Team to confirm if there are more 3PL NDR require mapping",
+        Reference: ""
+      },
+      {
+        Description: "COD Issue -COD RTO orders can't be identified in Shipsy & Dashboard",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
+        Owner: "IT",
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Resolved",
+        Timeline: "",
+        Remarks: "New Field is added to Shipsy Reports for Original COD Value",
+        Reference: "https://dev.azure.com/Starlinks-HeadOffice/Starlinks%20Capability%20Development/_search?text=attempt&type=workitem&workitem=WorkItems-Projects%2FStarlinks%20Capability%20Development%2FBacklog%2Fitem%2F7629"
+      },
+      {
+        Description: "Attempts showing more than actual attempts",
+        Platform: "Shipsy",
+        Customer: "All clients, DHL, SLG",
+        Owner: "IT",
+        Solution: "Hisham to get back with a solution. Expected by the date specified in the Timeline column.",
+        Status: "Under Testing",
+        Timeline: "",
+        Remarks: "End of this week",
+        Reference: "https://dev.azure.com/Starlinks-HeadOffice/Starlinks%20Capability%20Development/_search?text=attempt&workitem=WorkItems-Projects%2FStarlinks%20Capability%20Development%2FBacklog%2Fitem%2F7629"
       }
     ];
 
     // --- Constants ---
     const FIELDS = [
-      { key: "Category", label: "Category", required: true, tooltip: "Main category or issue type." },
-      { key: "Description", label: "Description", required: true, tooltip: "Detailed description of the category." },
+      { key: "Description", label: "Description", required: true, tooltip: "Detailed description of the issue or lesson." },
       { key: "Platform", label: "Platform", required: false, tooltip: "Platform (Web, Mobile, API, etc.)." },
       { key: "Customer", label: "Customer", required: false, tooltip: "Client or organization affected." },
       { key: "Owner", label: "Owner", required: false, tooltip: "Person or team responsible." },
-      { key: "Action", label: "Action", required: false, tooltip: "Action items and steps being taken." },
-      { key: "Status", label: "Status", required: false, type: "select", options: ["Not Started", "Work in Progress", "At Risk", "Completed"], tooltip: "Current state of the category." },
+      { key: "Solution", label: "Solution", required: false, tooltip: "Solution or action taken." },
+      { key: "Status", label: "Status", required: false, type: "select", options: ["Not Started", "In Progress", "Resolved", "Under Testing"], tooltip: "Current state of the issue or lesson." },
       { key: "Timeline", label: "Timeline", required: false, type: "date", tooltip: "Relevant date (e.g., fix, discovery)." },
+      { key: "Remarks", label: "Remarks", required: false, tooltip: "Additional remarks or notes." },
+      { key: "Reference", label: "Reference", required: false, tooltip: "Reference or supporting document/link." },
     ];
     const STATUS_COLORS = {
       "Not Started": "bg-gray-400 text-white",
-      "Work in Progress": "bg-orange-400 text-white",
-      "At Risk": "bg-red-500 text-white",
-      "Completed": "bg-green-500 text-white"
+      "In Progress": "bg-orange-400 text-white",
+      "Resolved": "bg-green-500 text-white",
+      "Under Testing": "bg-blue-400 text-white"
     };
     const STORAGE_KEY = "action_plan_tracker_data_v1";
     const STORAGE_AUDIT = "action_plan_tracker_audit_v1";
@@ -1171,9 +1185,9 @@
       if (!status) return '';
       const s = status.trim().toLowerCase();
       if (s === 'not started' || s === 'not started yet') return 'Not Started';
-      if (s === 'in progress' || s === 'work in progress' || s === 'wip') return 'Work in Progress';
-      if (s === 'at risk') return 'At Risk';
-      if (s === 'completed' || s === 'done' || s === 'finished') return 'Completed';
+      if (s === 'in progress' || s === 'work in progress' || s === 'wip') return 'In Progress';
+      if (s === 'resolved' || s === 'completed' || s === 'done' || s === 'finished') return 'Resolved';
+      if (s === 'under testing' || s === 'testing') return 'Under Testing';
       return status;
     }
     function normalizeImpactLevel(level) {
